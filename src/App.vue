@@ -3,7 +3,9 @@
     <Nav />
     <v-main>
       <!-- <HelloWorld /> -->
-      <!-- <Home /> -->
+      <Shelter />
+      <Pet />
+      <router-view></router-view>
     </v-main>
     <Foorter />
   </v-app>
@@ -13,17 +15,18 @@
 import Vue from "vue";
 import Nav from "./views/Nav.vue";
 import Foorter from "./views/Footer.vue";
-
 // import HelloWorld from "./components/HelloWorld.vue";
-// import Home from "./views/Home.vue";
+import Shelter from "./components/shelter/index.vue";
+import Pet from "./components//pet/index.vue";
 export default Vue.extend({
   name: "App",
 
   components: {
-    // HelloWorld,
-    // Home,
     Nav,
     Foorter,
+    // HelloWorld,
+    Shelter,
+    Pet,
   },
 
   data: () => ({

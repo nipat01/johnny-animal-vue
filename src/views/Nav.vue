@@ -4,6 +4,7 @@
       <div class="d-flex align-center">
         <v-app-bar-nav-icon></v-app-bar-nav-icon>
         <v-toolbar-title>Johnny Animal</v-toolbar-title>
+
         <!-- <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
