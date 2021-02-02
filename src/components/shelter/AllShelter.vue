@@ -4,7 +4,7 @@
       <v-row justify="center">
         <h1>รวมสถานรับเลี้ยงสัตว์</h1>
         <v-spacer></v-spacer>
-        <v-btn to="/allshelter" class="my-2"> ดูเพิ่มเติม </v-btn>
+        <!-- <v-btn to="/allshelter" class="my-2"> ดูเพิ่มเติม </v-btn> -->
       </v-row>
       <v-row>
         <v-col
@@ -71,6 +71,20 @@ export default {
       },
       {
         id: 3,
+        shelterName: "ป้ากัญญา",
+        typeOfUser: "3",
+        thumpb:
+          "https://mk0southeastasih56vx.kinstacdn.com/wp-content/uploads/2020/04/000_1QF1IN-scaled.jpg",
+      },
+      {
+        id: 4,
+        shelterName: "ป้ากัญญา",
+        typeOfUser: "3",
+        thumpb:
+          "https://mk0southeastasih56vx.kinstacdn.com/wp-content/uploads/2020/04/000_1QF1IN-scaled.jpg",
+      },
+      {
+        id: 4,
         shelterName: "ป้ากัญญา",
         typeOfUser: "3",
         thumpb:

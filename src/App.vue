@@ -2,9 +2,13 @@
   <v-app>
     <Nav />
     <v-main>
-      <!-- <HelloWorld /> -->
-      <Shelter />
-      <Pet />
+      <v-row>
+        <v-col>
+          <v-img
+            src="https://cdn.pixabay.com/photo/2015/07/09/19/32/dog-838281_960_720.jpg"
+          ></v-img>
+        </v-col>
+      </v-row>
       <router-view></router-view>
     </v-main>
     <Foorter />
@@ -15,18 +19,12 @@
 import Vue from "vue";
 import Nav from "./views/Nav.vue";
 import Foorter from "./views/Footer.vue";
-// import HelloWorld from "./components/HelloWorld.vue";
-import Shelter from "./components/shelter/index.vue";
-import Pet from "./components//pet/index.vue";
 export default Vue.extend({
   name: "App",
 
   components: {
     Nav,
     Foorter,
-    // HelloWorld,
-    Shelter,
-    Pet,
   },
 
   data: () => ({
