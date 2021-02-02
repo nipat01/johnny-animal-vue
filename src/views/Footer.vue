@@ -12,6 +12,7 @@
         {{ link }}
       </v-btn>
       <v-col class="primary lighten-2 py-4 text-center white--text" cols="12">
+      <!-- <v-col class="primary lighten-2 py-4 text-center white--text" cols="12"> -->
         {{ new Date().getFullYear() }} — <strong>Johnny Animal</strong>
       </v-col>
     </v-row>
@@ -20,7 +21,7 @@
 <script>
 export default {
   data: () => ({
-    links: ["Home", "About Us", "Team", "Services", "Blog", "Contact Us"],
+    links: ["Home", "About Us", "Contact Us"],
   }),
 };
 </script>

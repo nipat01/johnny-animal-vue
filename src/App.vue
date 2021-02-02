@@ -2,11 +2,14 @@
   <v-app>
     <Nav />
     <v-main>
-      <v-row>
+      <v-row justify="center">
         <v-col>
-          <v-img
-            src="https://cdn.pixabay.com/photo/2015/07/09/19/32/dog-838281_960_720.jpg"
-          ></v-img>
+          <!-- <v-container> -->
+            <v-img
+            height="550"
+              src="https://cdn.pixabay.com/photo/2015/07/09/19/32/dog-838281_960_720.jpg"
+            ></v-img>
+          <!-- </v-container> -->
         </v-col>
       </v-row>
       <router-view></router-view>

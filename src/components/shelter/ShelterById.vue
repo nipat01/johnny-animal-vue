@@ -1,6 +1,7 @@
 <template>
   <v-container>
     <div>this is shelter id</div>
+    {{ shelters }}
   </v-container>
 </template>
 
@@ -15,5 +16,9 @@ export default {
         "https://mk0southeastasih56vx.kinstacdn.com/wp-content/uploads/2020/04/000_1QF1IN-scaled.jpg",
     },
   }),
+
+  created() {
+    console.log(this.$route.params.id);
+  },
 };
 </script>
