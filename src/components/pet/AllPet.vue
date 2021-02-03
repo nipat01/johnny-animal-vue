@@ -19,9 +19,9 @@
               <v-img
                 class="white--text align-end"
                 height="200px"
-                :src="pet.thumb"
+                :src="pet.image"
               >
-                <v-card-title>{{ pet.name }}</v-card-title>
+                <!-- <v-card-title>{{ pet.name }}</v-card-title> -->
               </v-img>
 
               <v-card-subtitle class="pb-0"
@@ -29,7 +29,9 @@
               >
 
               <v-card-text class="text--primary">
-                <div>{{ pet.description }}</div>
+                <div>{{ pet.gender }}</div>
+                <div>{{ pet.specy }}</div>
+                <!-- <div>{{ pet.description }}</div> -->
               </v-card-text>
 
               <v-card-actions>
@@ -52,114 +54,25 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data: () => ({
-    pets: [
-      {
-        id: 1,
-        joshnnyId: 111,
-        name: "john",
-        age: "",
-        sex: "ผู้ชาย",
-        specy: "โฮ่ง",
-        color: "back",
-        status: "wating love",
-        description: "นิสันน่ารักมาก เลี้ยง่่าย",
-        thumb:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgv2R3oUiiUQUCmEL5Lsmw0Qf6oQqa5Jrqg&usqp=CAU",
-      },
-      {
-        id: 2,
-        joshnnyId: 111,
-        name: "john",
-        age: "",
-        sex: "ผู้ชาย",
-        specy: "โฮ่ง",
-        color: "back",
-        status: "wating love",
-        description: "นิสันน่ารักมาก เลี้ยง่่าย",
-        thumb:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgv2R3oUiiUQUCmEL5Lsmw0Qf6oQqa5Jrqg&usqp=CAU",
-      },
-      {
-        id: 3,
-        joshnnyId: 111,
-        name: "john",
-        age: "",
-        sex: "ผู้ชาย",
-        specy: "โฮ่ง",
-        color: "back",
-        status: "wating love",
-        description: "นิสันน่ารักมาก เลี้ยง่่าย",
-        thumb:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgv2R3oUiiUQUCmEL5Lsmw0Qf6oQqa5Jrqg&usqp=CAU",
-      },
-      {
-        id: 4,
-        joshnnyId: 111,
-        name: "john",
-        age: "",
-        sex: "ผู้ชาย",
-        specy: "โฮ่ง",
-        color: "back",
-        status: "wating love",
-        description: "นิสันน่ารักมาก เลี้ยง่่าย",
-        thumb:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgv2R3oUiiUQUCmEL5Lsmw0Qf6oQqa5Jrqg&usqp=CAU",
-      },
-      {
-        id: 4,
-        joshnnyId: 111,
-        name: "john",
-        age: "",
-        sex: "ผู้ชาย",
-        specy: "โฮ่ง",
-        color: "back",
-        status: "wating love",
-        description: "นิสันน่ารักมาก เลี้ยง่่าย",
-        thumb:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgv2R3oUiiUQUCmEL5Lsmw0Qf6oQqa5Jrqg&usqp=CAU",
-      },
-      {
-        id: 4,
-        joshnnyId: 111,
-        name: "john",
-        age: "",
-        sex: "ผู้ชาย",
-        specy: "โฮ่ง",
-        color: "back",
-        status: "wating love",
-        description: "นิสันน่ารักมาก เลี้ยง่่าย",
-        thumb:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgv2R3oUiiUQUCmEL5Lsmw0Qf6oQqa5Jrqg&usqp=CAU",
-      },
-      {
-        id: 4,
-        joshnnyId: 111,
-        name: "john",
-        age: "",
-        sex: "ผู้ชาย",
-        specy: "โฮ่ง",
-        color: "back",
-        status: "wating love",
-        description: "นิสันน่ารักมาก เลี้ยง่่าย",
-        thumb:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgv2R3oUiiUQUCmEL5Lsmw0Qf6oQqa5Jrqg&usqp=CAU",
-      },
-      {
-        id: 4,
-        joshnnyId: 111,
-        name: "john",
-        age: "",
-        sex: "ผู้ชาย",
-        specy: "โฮ่ง",
-        color: "back",
-        status: "wating love",
-        description: "นิสันน่ารักมาก เลี้ยง่่าย",
-        thumb:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgv2R3oUiiUQUCmEL5Lsmw0Qf6oQqa5Jrqg&usqp=CAU",
-      },
-    ],
+    pets: [],
   }),
+  methods: {
+    getAllPet() {
+      axios.get("https://johnny-animal-api.herokuapp.com/pet").then((response) => {
+        console.log("response", response);
+        this.pets = response.data;
+      });
+      // axios.get("http://localhost:3000/pet").then((response) => {
+      //   console.log("response", response);
+      //   this.pets = response.data;
+      // });
+    },
+  },
+  mounted() {
+    this.getAllPet();
+  },
 };
 </script>

@@ -9,12 +9,10 @@
       </v-row>
       <v-row>
         <v-col>
-          {{ pets }}
-          <p>ชื่อ</p>
-          <p>{{ pets.name }}</p>
+          <v-img max-width="500" max-height="300" :src="pets.image"></v-img>
         </v-col>
         <v-col>
-          <v-img max-width="500" max-height="300" :src="pets.thumb"></v-img>
+          {{ pets }}
         </v-col>
       </v-row>
     </div>
@@ -23,6 +21,7 @@
 
 
 <script>
+import axios from "axios";
 export default {
   data: () => ({
     pets: {
@@ -38,10 +37,22 @@ export default {
       thumb:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgv2R3oUiiUQUCmEL5Lsmw0Qf6oQqa5Jrqg&usqp=CAU",
     },
+    id: "",
   }),
 
   created() {
-    console.log(this.$route.params.id);
+    this.id = this.$route.params.id;
+  },
+  mounted() {
+    this.getPetById(this.id);
+  },
+  methods: {
+    getPetById(id) {
+      axios.get(`https://johnny-animal-api.herokuapp.com/pet/${id}`).then((response) => {
+        console.log("response", response.data);
+        this.pets = response.data;
+      });
+    },
   },
 };
 </script>

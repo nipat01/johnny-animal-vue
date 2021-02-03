@@ -19,9 +19,8 @@
               <v-img
                 class="white--text align-end"
                 height="200px"
-                :src="pet.thumb"
+                :src="pet.image"
               >
-                <v-card-title>{{ pet.name }}</v-card-title>
               </v-img>
 
               <v-card-subtitle class="pb-0"
@@ -29,7 +28,8 @@
               >
 
               <v-card-text class="text--primary">
-                <div>{{ pet.description }}</div>
+                <div>{{ pet.gender }}</div>
+                <div>{{ pet.specy }}</div>
               </v-card-text>
 
               <v-card-actions>
@@ -52,6 +52,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data: () => ({
     pets: [
@@ -109,5 +110,15 @@ export default {
       },
     ],
   }),
+  mounted() {
+    this.getPetByLimit();
+  },
+  methods: {
+    getPetByLimit() {
+      axios
+        .get("https://johnny-animal-api.herokuapp.com/pet/only6")
+        .then((response) => (this.pets = response.data));
+    },
+  },
 };
 </script>
