@@ -21,6 +21,7 @@
 import axios from "axios";
 export default {
   data: () => ({
+    apiUrl: process.env.VUE_APP_API_URL,
     gender: ["ผู้ชาย", "ผู้หญิง"],
     specy: ["โฮ่ง", "เหมียว"],
     info: [],
@@ -39,13 +40,11 @@ export default {
 
   methods: {
     submit() {
-
-
       if (this.pet.specy == "โฮ่ง") {
         this.pet.image =
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgv2R3oUiiUQUCmEL5Lsmw0Qf6oQqa5Jrqg&usqp=CAU";
       }
-      axios.post("https://johnny-animal-api.herokuapp.com/pet", this.pet).then((response) => {
+      axios.post(`${this.apiUrl}/pet`, this.pet).then((response) => {
         console.log(response);
         this.$router.push("/");
       });

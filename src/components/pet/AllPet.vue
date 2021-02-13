@@ -57,18 +57,16 @@
 import axios from "axios";
 export default {
   data: () => ({
+    apiUrl: process.env.VUE_APP_API_URL,
     pets: [],
   }),
   methods: {
     getAllPet() {
-      axios.get("https://johnny-animal-api.herokuapp.com/pet").then((response) => {
+      axios.get(`${this.apiUrl}/pet`).then((response) => {
         console.log("response", response);
         this.pets = response.data;
       });
-      // axios.get("http://localhost:3000/pet").then((response) => {
-      //   console.log("response", response);
-      //   this.pets = response.data;
-      // });
+   
     },
   },
   mounted() {

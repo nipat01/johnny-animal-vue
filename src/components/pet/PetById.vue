@@ -24,19 +24,8 @@
 import axios from "axios";
 export default {
   data: () => ({
-    pets: {
-      id: 1,
-      joshnnyId: 111,
-      name: "john",
-      age: "",
-      sex: "ผู้ชาย",
-      specy: "โฮ่ง",
-      color: "back",
-      status: "wating love",
-      description: "นิสันน่ารักมาก เลี้ยง่่าย",
-      thumb:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgv2R3oUiiUQUCmEL5Lsmw0Qf6oQqa5Jrqg&usqp=CAU",
-    },
+    apiUrl: process.env.VUE_APP_API_URL,
+    pets: {},
     id: "",
   }),
 
@@ -48,7 +37,7 @@ export default {
   },
   methods: {
     getPetById(id) {
-      axios.get(`https://johnny-animal-api.herokuapp.com/pet/${id}`).then((response) => {
+      axios.get(`${this.apiUrl}/pet/${id}`).then((response) => {
         console.log("response", response.data);
         this.pets = response.data;
       });
