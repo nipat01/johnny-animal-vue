@@ -45,7 +45,7 @@ export default {
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgv2R3oUiiUQUCmEL5Lsmw0Qf6oQqa5Jrqg&usqp=CAU";
       }
       axios.post(`${this.apiUrl}/pet`, this.pet).then((response) => {
-        console.log(response);
+        // console.log(response);
         this.$router.push("/");
       });
     },

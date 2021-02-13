@@ -63,12 +63,11 @@ export default {
   },
   methods: {
     getPetByLimit() {
-      console.log("apiUrl", this.apiUrl);
+      // console.log("apiUrl", this.apiUrl);
       axios.get(`${this.apiUrl}/pet/only6`).then(
         (response) =>
           // (
           {
-            console.log("response", response);
             this.pets = response.data;
           }
         // )
